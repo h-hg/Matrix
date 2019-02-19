@@ -22,14 +22,14 @@ private:
 	void copy(const Matrix<T> &matrix);
 	void movecopy(Matrix<T> &matrix);
 	
-	//This function convert the matrix to Row-Echlon Forme, and return the number of pivot
+	//This function convert the matrix to Row-Echlon Form, and return the number of pivot
 	//pivot_pos is a pointer to data of the column of the pivot, it should not be less than sizeof(T)*column
 	//该函数将矩阵转化为阶梯型，返回主元的个数，limitCol表示高斯消元最多消到limitCol列，pivot_pos[i]储存第i行主元的列位置
 	size_t ref(size_t limitCol,size_t *pivot_pos);//Gauss-Jordan Elimination, 高斯若当消元
 	
 	size_t ref(size_t *pivot_pos){return ref(column,pivot_pos);};
 
-	//convert Row-Echlon Forme to Reduced Row-Echlon Forme
+	//convert Row-Echlon Form to Reduced Row-Echlon Form
 	//将阶梯型矩阵转化为标准型
 	void ref_to_rref(size_t *pivot_pos,size_t pivot_num);
 
